@@ -1,5 +1,6 @@
 package com.github.youssfbr.screenmatch;
 
+import com.github.youssfbr.screenmatch.calculos.CalculadoraDeTempo;
 import com.github.youssfbr.screenmatch.modelos.Filme;
 import com.github.youssfbr.screenmatch.modelos.Serie;
 
@@ -34,5 +35,22 @@ public class Principal {
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração da série: " + lost.getDuracaoEmMinutos());
 
+        final Filme outroFilme = new Filme();
+        outroFilme.setNome("Avatar");
+        outroFilme.setAnoDeLancamento(2023);
+        outroFilme.setDuracaoEmMinutos(200);
+
+        final CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(outroFilme);
+        calculadora.inclui(lost);
+
+        System.out.println("\n----------------------------------------------\n");
+        System.out.println("Tempo total da soma dos títulos das séries e filmes\n");
+        System.out.println("Filme: " + meuFilme.getNome() + " , " + meuFilme.getDuracaoEmMinutos() + " minutos");
+        System.out.println("Filme: " + outroFilme.getNome() + " , " + outroFilme.getDuracaoEmMinutos() + " minutos");
+        System.out.println("Serie: " + lost.getNome() + " , " + lost.getDuracaoEmMinutos() + " minutos");
+
+        System.out.println("\nTempo total: " + calculadora.getTempoTotal()+ " minutos");
     }
 }
