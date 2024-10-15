@@ -1,6 +1,8 @@
 package com.github.youssfbr.screenmatch.modelos;
 
-public class Filme extends Titulo {
+import com.github.youssfbr.screenmatch.calculos.Classificavel;
+
+public class Filme extends Titulo implements Classificavel {
     private String diretor;
 
     public String getDiretor() {
@@ -9,5 +11,10 @@ public class Filme extends Titulo {
 
     public void setDiretor(String diretor) {
         this.diretor = diretor;
+    }
+
+    @Override
+    public int getClassificacao() {
+        return (int) pegaMedia() / 2;
     }
 }

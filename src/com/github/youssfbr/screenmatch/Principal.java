@@ -1,6 +1,8 @@
 package com.github.youssfbr.screenmatch;
 
 import com.github.youssfbr.screenmatch.calculos.CalculadoraDeTempo;
+import com.github.youssfbr.screenmatch.calculos.FiltroRecomendacao;
+import com.github.youssfbr.screenmatch.modelos.Episodio;
 import com.github.youssfbr.screenmatch.modelos.Filme;
 import com.github.youssfbr.screenmatch.modelos.Serie;
 
@@ -52,5 +54,18 @@ public class Principal {
         System.out.println("Serie: " + lost.getNome() + " , " + lost.getDuracaoEmMinutos() + " minutos");
 
         System.out.println("\nTempo total: " + calculadora.getTempoTotal()+ " minutos");
+
+        System.out.println("\n----------------------------------------------\n");
+        System.out.println(meuFilme.getNome());
+        final FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        System.out.println("\n----------------------------------------------\n");
+        System.out.println(lost.getNome());
+        final Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
     }
 }
