@@ -5,8 +5,8 @@ import com.github.youssfbr.screenmatch.calculos.Classificavel;
 public class Filme extends Titulo implements Classificavel {
     private String diretor;
 
-    public Filme(String nome) {
-        this.setNome(nome);
+    public Filme(String nome , Integer anoDeLancamento) {
+        super(nome , anoDeLancamento);
     }
 
     public String getDiretor() {
