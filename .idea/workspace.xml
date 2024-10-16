@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1842800b-e919-4480-9e52-9f683f42aa5e" name="Changes" comment="Classe Filme, instanciando e atribuindo valores.">
+    <list default="true" id="1842800b-e919-4480-9e52-9f683f42aa5e" name="Changes" comment="Adicionando filmes na Lista com ArrayList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/github/youssfbr/screenmatch/Filme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/github/youssfbr/screenmatch/Filme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/github/youssfbr/screenmatch/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/github/youssfbr/screenmatch/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/github/youssfbr/screenmatch/modelos/Filme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/github/youssfbr/screenmatch/modelos/Filme.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +26,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2n2fMwOZeq0SvcnQfDq1hvc1YAj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -37,16 +36,16 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Principal.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Principal.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.youssfbr.screenmatch.Principal" />
@@ -91,11 +90,56 @@
       <option name="project" value="LOCAL" />
       <updated>1728178351753</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=".gitignore , pacote modelos , encapsulando a classe Filme">
+      <option name="closed" value="true" />
+      <created>1728524812685</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728524812685</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Entidade Filme , Herança">
+      <option name="closed" value="true" />
+      <created>1728656275683</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728656275684</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Polimorfismo">
+      <option name="closed" value="true" />
+      <created>1728661280666</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728661280666</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Classe Episodio, filtro de recomendacao">
+      <option name="closed" value="true" />
+      <created>1729012932404</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729012932404</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Adicionando filmes na Lista com ArrayList">
+      <option name="closed" value="true" />
+      <created>1729038135097</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729038135097</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Classe Filme, instanciando e atribuindo valores." />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe Filme, instanciando e atribuindo valores." />
+    <MESSAGE value=".gitignore , pacote modelos , encapsulando a classe Filme" />
+    <MESSAGE value="Entidade Filme , Herança" />
+    <MESSAGE value="Polimorfismo" />
+    <MESSAGE value="Classe Episodio, filtro de recomendacao" />
+    <MESSAGE value="Adicionando filmes na Lista com ArrayList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionando filmes na Lista com ArrayList" />
   </component>
 </project>
