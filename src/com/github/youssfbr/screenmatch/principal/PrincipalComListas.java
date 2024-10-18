@@ -5,6 +5,7 @@ import com.github.youssfbr.screenmatch.modelos.Serie;
 import com.github.youssfbr.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -44,7 +45,21 @@ public class PrincipalComListas {
 //            }
         }
 
+        final ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adan Sandler");
+        buscaPorArtista.add("Paulo");
+        buscaPorArtista.add("Jacqueline");
+        // Retorna na ordem em foi incluido
+        System.out.println("\nOrdenado na ordem em que foi incluído");
+        System.out.println(buscaPorArtista);
 
+        // Retorna na ordem em foi incluido
+        Collections.sort(buscaPorArtista);
+        System.out.println("\nOrdenado por ordem alfabética");
+        System.out.println(buscaPorArtista);
 
+        System.out.println("\nLista de títulos");
+        Collections.sort(lista);
+        System.out.println(lista);
     }
 }

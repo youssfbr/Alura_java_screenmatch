@@ -1,6 +1,6 @@
 package com.github.youssfbr.screenmatch.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private Integer anoDeLancamento;
     private Boolean incluidoNoPlano;
@@ -62,5 +62,10 @@ public class Titulo {
 
     public double pegaMedia() {
         return somaDasAvaliacoes / totaDeAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return getNome().compareTo(outroTitulo.getNome());
     }
 }
