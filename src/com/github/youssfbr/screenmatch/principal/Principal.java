@@ -1,4 +1,4 @@
-package com.github.youssfbr.screenmatch;
+package com.github.youssfbr.screenmatch.principal;
 
 import com.github.youssfbr.screenmatch.calculos.CalculadoraDeTempo;
 import com.github.youssfbr.screenmatch.calculos.FiltroRecomendacao;
