@@ -1,7 +1,11 @@
 package com.github.youssfbr.screenmatch.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private Integer anoDeLancamento;
     private Boolean incluidoNoPlano;
     private Double somaDasAvaliacoes = 0.0;
