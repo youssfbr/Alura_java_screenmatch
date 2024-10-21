@@ -11,45 +11,70 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Scanner;
 
 public class PrincipalComBusca {
     private static final String API_KEY = System.getenv("API_KEY");
     private static final String HOST = "https://www.omdbapi.com/";
-    private static final String URL = HOST + "?i=tt3896198&apikey=" + API_KEY;
+
+//    public static final String MOVIE = "i=tt3896198";
+    //public static final String MOVIE = "t=divertidamente";
+//    private static final String URL = HOST + "?" + MOVIE + "&apikey=" + API_KEY;
+    // https://www.omdbapi.com/?t=divertidamente&apikey=3a7f4d77
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        HttpClient client = HttpClient.newHttpClient();
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("\nDigite um nome de filme para buscar: ");
+            String busca = sc.nextLine();
 
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(URL))
-                .build();
+            String URL = HOST + "?t=" + busca + "&apikey=" + API_KEY;
+            URL = URL.replace(" " , "+").toLowerCase();
 
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
+            HttpClient client = HttpClient.newHttpClient();
 
-        final String json = response.body();
-        System.out.println(json);
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(URL))
+                    .build();
 
-        // final Gson gson = new Gson();
-        // final Titulo meuTitulo = gson.fromJson(json , Titulo.class);
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
 
-        final Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy
-                .UPPER_CAMEL_CASE)
-                .create();
+            final String json = response.body();
+            System.out.println(json);
 
-        final TituloOmdb meuTituloOmdb = gson.fromJson(json , TituloOmdb.class);
+            // final Gson gson = new Gson();
+            // final Titulo meuTitulo = gson.fromJson(json , Titulo.class);
 
-        System.out.println(meuTituloOmdb.title());
-        System.out.println(meuTituloOmdb.year());
-        System.out.println(meuTituloOmdb.runtime());
+            final Gson gson = new GsonBuilder()
+                    .setFieldNamingPolicy(FieldNamingPolicy
+                            .UPPER_CAMEL_CASE)
+                    .create();
 
-        System.out.println("\nTitulo ja convertido");
-        final Titulo meuTitulo = new Titulo(meuTituloOmdb);
-//        System.out.println(meuTitulo.getNome());
-//        System.out.println(meuTitulo.getAnoDeLancamento());
-//        System.out.println(meuTitulo.getDuracaoEmMinutos() + " min");
-        System.out.println(meuTitulo);
+            final TituloOmdb meuTituloOmdb = gson.fromJson(json , TituloOmdb.class);
+
+            System.out.println(meuTituloOmdb.title());
+            System.out.println(meuTituloOmdb.year());
+            System.out.println(meuTituloOmdb.runtime());
+
+            System.out.println("\nTitulo ja convertido");
+            final Titulo meuTitulo = new Titulo(meuTituloOmdb);
+
+            //        System.out.println(meuTitulo.getNome());
+            //        System.out.println(meuTitulo.getAnoDeLancamento());
+            //        System.out.println(meuTitulo.getDuracaoEmMinutos() + " min");
+
+            System.out.println(meuTitulo);
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Aconteceu um erro:");
+            System.out.println(e.getMessage());
+        }
+        catch (IllegalArgumentException e) {
+            System.out.println("Aconteceu um erro:");
+            System.out.println(e.getMessage());
+        }
+        System.out.println("O programa finalizou corretamente");
     }
 }

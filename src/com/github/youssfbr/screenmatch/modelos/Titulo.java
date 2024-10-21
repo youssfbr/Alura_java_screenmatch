@@ -20,7 +20,7 @@ public class Titulo implements Comparable<Titulo> {
     public Titulo(TituloOmdb meuTituloOmdb) {
         nome = meuTituloOmdb.title();
         anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
-        duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0 , 3));
+        duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0 , 3).replace(" " , ""));
     }
 
     public String getNome() {
