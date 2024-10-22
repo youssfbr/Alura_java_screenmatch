@@ -1,16 +1,12 @@
 package com.github.youssfbr.screenmatch.modelos;
 
-import com.google.gson.annotations.SerializedName;
-
 public class Titulo implements Comparable<Titulo> {
-    @SerializedName("Title")
     private String nome;
-    @SerializedName("Year")
     private Integer anoDeLancamento;
     private Boolean incluidoNoPlano;
     private Double somaDasAvaliacoes = 0.0;
     private Integer totaDeAvaliacoes = 0;
-    private Integer duracaoEmMinutos;
+    private Integer duracaoEmMinutos;// = 0;
 
     public Titulo(String nome , Integer anoDeLancamento) {
         this.nome = nome;
@@ -18,9 +14,17 @@ public class Titulo implements Comparable<Titulo> {
     }
 
     public Titulo(TituloOmdb meuTituloOmdb) {
+
         nome = meuTituloOmdb.title();
-        anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
-        duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0 , 3).replace(" " , ""));
+        anoDeLancamento = Integer.valueOf(meuTituloOmdb.year().substring(0 , 4));
+
+        if (!meuTituloOmdb.runtime().equals("N/A")) {
+          duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0 , 3).replace(" " , ""));
+        }
+
+        System.out.println(nome);
+        System.out.println(anoDeLancamento);
+        System.out.println(duracaoEmMinutos);
     }
 
     public String getNome() {
@@ -84,7 +88,8 @@ public class Titulo implements Comparable<Titulo> {
         return "\nTitulo {" +
                 "\n\tnome='" + nome + '\'' +
                 ", \n\tanoDeLancamento=" + anoDeLancamento +
-                ", \n\tduracaoEmMinutos=" + duracaoEmMinutos + " min" +
+                ", \n\tduracaoEmMinutos=" + duracaoEmMinutos + (duracaoEmMinutos != null ? " min" : "") +
                 "\n}";
     }
+
 }

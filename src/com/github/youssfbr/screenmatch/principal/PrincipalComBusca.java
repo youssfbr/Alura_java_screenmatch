@@ -1,5 +1,6 @@
 package com.github.youssfbr.screenmatch.principal;
 
+import com.github.youssfbr.screenmatch.excecoes.ErroDeConversaoDeAnoException;
 import com.github.youssfbr.screenmatch.modelos.Titulo;
 import com.github.youssfbr.screenmatch.modelos.TituloOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -20,29 +21,30 @@ public class PrincipalComBusca {
 //    public static final String MOVIE = "i=tt3896198";
     //public static final String MOVIE = "t=divertidamente";
 //    private static final String URL = HOST + "?" + MOVIE + "&apikey=" + API_KEY;
-    // https://www.omdbapi.com/?t=divertidamente&apikey=3a7f4d77
+    // https://www.omdbapi.com/?t=divertidamente&apikey=api_key
 
     public static void main(String[] args) throws IOException, InterruptedException {
+
+        String url = null;
 
         try {
             Scanner sc = new Scanner(System.in);
             System.out.print("\nDigite um nome de filme para buscar: ");
             String busca = sc.nextLine();
 
-            String URL = HOST + "?t=" + busca + "&apikey=" + API_KEY;
-            URL = URL.replace(" " , "+").toLowerCase();
+            url = HOST + "?t=" + busca.replace(" " , "+").toLowerCase() + "&apikey=" + API_KEY;
 
             HttpClient client = HttpClient.newHttpClient();
 
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(URL))
+                    .uri(URI.create(url))
                     .build();
 
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
             final String json = response.body();
-            System.out.println(json);
+            System.out.println('\n' + json);
 
             // final Gson gson = new Gson();
             // final Titulo meuTitulo = gson.fromJson(json , Titulo.class);
@@ -72,9 +74,14 @@ public class PrincipalComBusca {
             System.out.println(e.getMessage());
         }
         catch (IllegalArgumentException e) {
-            System.out.println("Aconteceu um erro:");
+            System.out.println("\nAconteceu um erro:");
+            System.out.println("Há um erro na url (endereco web), talvez espaco");
+            System.out.println('\n' + url);
+            System.out.println('\n' + e.getMessage());
+        }
+        catch (ErroDeConversaoDeAnoException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("O programa finalizou corretamente");
+        System.out.println("\nO programa finalizou corretamente");
     }
 }
