@@ -21,10 +21,6 @@ public class Titulo implements Comparable<Titulo> {
         if (!meuTituloOmdb.runtime().equals("N/A")) {
           duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0 , 3).replace(" " , ""));
         }
-
-        System.out.println(nome);
-        System.out.println(anoDeLancamento);
-        System.out.println(duracaoEmMinutos);
     }
 
     public String getNome() {
@@ -85,11 +81,9 @@ public class Titulo implements Comparable<Titulo> {
 
     @Override
     public String toString() {
-        return "\nTitulo {" +
-                "\n\tnome='" + nome + '\'' +
-                ", \n\tanoDeLancamento=" + anoDeLancamento +
-                ", \n\tduracaoEmMinutos=" + duracaoEmMinutos + (duracaoEmMinutos != null ? " min" : "") +
-                "\n}";
+        return "nome=" + nome +
+                ", anoDeLancamento=" + anoDeLancamento +
+                ", duracaoEmMinutos=" + duracaoEmMinutos + (duracaoEmMinutos != null ? " min" : "");
     }
 
 }
